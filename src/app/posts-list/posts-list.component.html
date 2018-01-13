@@ -1,0 +1,28 @@
+
+<!--=======================================================================|
+| Red Path                                                                 |
+|==========================================================================|
+| Suscribe el componente PostPreviewComponent al evento que hayas definido |
+| en él para notificar los clics sobre los autores de los posts.           |
+|========================================================================-->
+
+<!--=======================================================================|
+| Green Path                                                               |
+|==========================================================================|
+| Suscribe el componente PostPreviewComponent al evento que hayas definido |
+| en él para notificar los clics sobre los posts.                          |
+|========================================================================-->
+<div
+*ngFor="let post of posts">
+    <div>
+        <div *ngIf="post.publicationDate <= hora ">
+            <app-post-preview 
+             *ngIf="post.author.id == author || controlador === true"
+            (emisionConstacto)="seleccionarContacto($event)"
+            [post]="post"
+            [idC]="idC"
+            ></app-post-preview>
+        </div>
+    </div>
+</div>
+

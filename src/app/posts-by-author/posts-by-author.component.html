@@ -1,0 +1,14 @@
+<div class="posts-by-author">
+  <h2 
+  *ngIf="autorNombre"
+  >Historias de {{ autorNombre }}</h2>
+  <h2
+  *ngIf="!autorNombre && !upv"
+  >Los siento Fernando, no hay ningún ID correcto seleccionado.
+  <!--Era fácil hacer esta tontería, jeje -->
+</h2>
+<h2 *ngIf="upv">NOTICIAS DE LA UNIVERSIDAD POLITÉCNICA DE VALENCIA</h2>
+  <app-posts-list [posts]="posts" 
+  [author]="author"
+  ></app-posts-list>
+</div>
